@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-Use App\AnswerModel;
+Use App\AnswersModel;
 
 class AnswerController extends Controller
 {
     //
     public function GetAnswer() {
-        $answer = AnswerModel::inRandomOrder()->get()[0];
-        return $answer;
+        $answer = AnswersModel::inRandomOrder()->get()[0];
+        return response($answer, 200);
     }
 }
